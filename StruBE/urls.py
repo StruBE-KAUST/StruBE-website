@@ -21,10 +21,11 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'$', views.home, name="home"),
+    url(r'^$', views.home, name="home"),
     url(r'^admin/', admin.site.urls),
     url(r'^account/', include('myaccount.urls')),
     url(r'^contact/', views.MyContactView.as_view(), name="contact"),
+    url(r'^people/', views.people, name="people"),
 ]
 
 handler403 = 'StruBE.views.custom403'
