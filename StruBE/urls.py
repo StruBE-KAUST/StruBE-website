@@ -26,3 +26,7 @@ urlpatterns = [
     url(r'^account/', include('myaccount.urls')),
     url(r'^contact/', views.MyContactView.as_view(), name="contact"),
 ]
+
+handler403 = 'StruBE.views.custom403'
+handler404 = 'StruBE.views.custom404'
+handler500 = 'StruBE.views.custom500'
