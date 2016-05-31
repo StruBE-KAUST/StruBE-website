@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}StruBE{% endblock %}
+{% block app_name %}Sign up{% endblock %}
+{% block content %}
+<h2>Confirm your email address</h2>
+
+<p>We have sent you an email to <b>{{ email }}</b> for verification. Follow the link provided to finalize the signup process. If you do not receive it within a few minutes, <a href="{% url "contact" %}">contact us</a></p>
+<p><a href="{{ success_url }}">Go back</a></p>
+{% endblock %}
