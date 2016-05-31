@@ -115,6 +115,7 @@ INSTALLED_APPS = [
     'myaccount',
     'crispy_forms',
     'StruBE',
+    'contaminer',
 ]
 log.debug("Applications : " + str(INSTALLED_APPS))
 
