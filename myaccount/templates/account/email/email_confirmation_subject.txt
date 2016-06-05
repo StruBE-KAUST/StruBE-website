@@ -1,0 +1,1 @@
+Confirm email address{% if SITE_NAME %} for {{ SITE_NAME }}{% endif %}

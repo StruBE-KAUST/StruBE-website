@@ -1,0 +1,52 @@
+# -*- coding : utf-8 -*-
+
+##    Copyright (C) 2015 Hungler Arnaud
+##
+##    This program is free software; you can redistribute it and/or modify
+##    it under the terms of the GNU General Public License as published by
+##    the Free Software Foundation; either version 2 of the License, or
+##    (at your option) any later version.
+##
+##    This program is distributed in the hope that it will be useful,
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+##    GNU General Public License for more details.
+##
+##    You should have received a copy of the GNU General Public License along
+##    with this program; if not, write to the Free Software Foundation, Inc.,
+##    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+from account import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Field
+from crispy_forms.layout import Submit
+
+"""
+    This module contains the forms for user management
+"""
+
+class MyLoginForm(forms.LoginEmailForm):
+    """
+        Form to Log in
+    """
+    def __init__(self, *args, **kwargs):
+        super(MyLoginForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = False
+
+class MySignupForm(forms.SignupForm):
+    """
+        Form to create a new user
+    """
+    def __init__(self, *args, **kwargs):
+        super(MySignupForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+                Field(
+                    'email',
+                    'password',
+                    'password_confirm',
+                    )
+                )
+        self.helper.form_tag = False
+        del self.fields["username"]

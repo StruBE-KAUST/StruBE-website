@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}StruBE{% endblock %}
+{% block app_name %}Account{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load account_tags %}
+<div class="row">
+    <div class="col-md-5">
+        <p>
+        <a href="{% url "account_password" %}">Change your password</a>
+        </p><p>
+        <a href="{% url "account_delete" %}">Delete my account</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

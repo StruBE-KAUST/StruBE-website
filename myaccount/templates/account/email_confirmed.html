@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}StruBE{% endblock %}
+{% block app_name %}Confirm email{% endblock %}
+{% block content %}
+<h1>Email confirmed</h1>
+<p>You have confirmed <b>{{ confirmation.email_address.email }}</b></p>
+{% endblock %}
