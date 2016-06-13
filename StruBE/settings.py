@@ -171,7 +171,7 @@ static_path = config.get('PATHS', 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, static_path)
 
 STATICFILES_DIRS = [
-        'StruBE/static',
+        os.path.join(BASE_DIR, 'StruBE/static'),
         ]
 
 # Media files (Uploaded by users)
