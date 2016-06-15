@@ -1,0 +1,8 @@
+venv/
+*.pyc
+db.sqlite3
+config.ini
+data/
+secret/
+contaminer
+publications

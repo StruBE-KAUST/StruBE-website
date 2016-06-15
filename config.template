@@ -1,0 +1,39 @@
+# Copy this file on config.ini
+[PATHS]
+data = data/
+log = data/log/
+static = data/static/
+media = data/media/
+
+[DATABASE]
+# Choose between sqlite3, mysql, oracle, postgresql_psycopg2
+engine = sqlite3
+
+# Only for sqlite 3
+path = data/db.sqlite3
+
+# Only for mysql, oracle, postgresql_psycopg2
+name = django
+user = django
+password = 
+host = 127.0.0.1
+port = 5432
+
+[EMAIL]
+host = webmail.kaust.edu.sa
+port = 465
+host_user = cbrc-strube
+host_password =
+tls = True
+ssl = False
+# Dest for mails from django (admin, dev, ...)
+defaultmail = 
+# From field for mails send from django
+default_from = noreply@example.com
+
+[DEFAULT]
+debug = True
+
+# If DEBUG = False
+hosts = ["localhost"]
+servermail =

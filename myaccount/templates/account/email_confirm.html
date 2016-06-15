@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}StruBE{% endblock %}
+{% block app_name %}Confirm email{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-5">
+        <form method="post" action="{% url "account_confirm_email" key=confirmation.key %}">
+            <legend>Confirm Email</legend>
+            <fieldset>
+                {% csrf_token %}
+                <p>Confirm email address <b>{{ confirmation.email_address.email }}</b>?</p>
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}
