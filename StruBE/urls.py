@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^account/', include('myaccount.urls')),
     url(r'^contact/', views.MyContactView.as_view(), name="envelope-contact"),
+    url(r'^contact/', views.MyContactView.as_view(), name="contact"),
     url(r'^people/', views.people, name="people"),
     url(r'^contaminer/', include('contaminer.urls', namespace="ContaMiner")),
 ]
