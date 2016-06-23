@@ -23,13 +23,13 @@ from .views import MySignupView
 from .views import MySettingsView
 
 urlpatterns = [
-        url(r'^login/', MyLoginView.as_view(),
+        url(r'^login', MyLoginView.as_view(),
             name='account_login'),
-        url(r'^signup/', MySignupView.as_view(),
+        url(r'^signup', MySignupView.as_view(),
             name='account_signup'),
-        url(r'^password_reset/', MySignupView.as_view(),
+        url(r'^password_reset', MySignupView.as_view(),
             name='account_password_reset'),
-        url(r'^settings/', MySettingsView.as_view(),
+        url(r'^settings', MySettingsView.as_view(),
             name='account_settings'),
         url(r'^', include("account.urls")),
 ]
