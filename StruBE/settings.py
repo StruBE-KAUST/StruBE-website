@@ -116,6 +116,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'StruBE',
     'contaminer',
+    'publications',
 ]
 log.debug("Applications : " + str(INSTALLED_APPS))
 
@@ -135,7 +136,6 @@ MIDDLEWARE_CLASSES = [
 log.debug("Middlewares : " + str(MIDDLEWARE_CLASSES))
 
 # Templates configuration
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -164,6 +164,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+# Account configuration
+AUTHENTICATION_BACKEND = [
+        'account.auth_backends.EmailAuthenticationBackend',
+]
+ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
+ACCOUNT_EMAIL_UNIQUE = True
+LOGIN_URL = "/account/login"
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
@@ -211,4 +219,3 @@ if not DEBUG:
 
 # End
 log.debug("Settings done")
-
