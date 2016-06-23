@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'^contact/', views.MyContactView.as_view(), name="contact"),
     url(r'^people/', views.people, name="people"),
     url(r'^contaminer/', include('contaminer.urls', namespace="ContaMiner")),
+    url(r'^publications/', include('publications.urls',
+        namespace="Publications")),
 ]
 
 handler403 = 'StruBE.views.custom403'
