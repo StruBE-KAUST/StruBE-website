@@ -110,6 +110,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'tinymce',
     'account',
     'envelope',
     'myaccount',
@@ -117,6 +118,7 @@ INSTALLED_APPS = [
     'StruBE',
     'contaminer',
     'publications',
+    'news',
 ]
 log.debug("Applications : " + str(INSTALLED_APPS))
 

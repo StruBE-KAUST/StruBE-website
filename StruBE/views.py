@@ -16,6 +16,9 @@
 ##    with this program; if not, write to the Free Software Foundation, Inc.,
 ##    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+
+import logging
+
 from django.shortcuts import render
 from django.contrib import messages
 from django.http import HttpResponse
@@ -23,10 +26,14 @@ from envelope.views import ContactView
 from braces.views import FormMessagesMixin
 
 from .forms import MyContactForm
-import logging
+from news.models import Article
+import news.views
 
 def home(request):
-    return render(request, 'home.html')
+    if Article.objects.all() == []:
+        return render(request, 'home.html')
+    else:
+        return news.views.latest(request)
 
 def people(request):
     return render(request, 'people.html')
