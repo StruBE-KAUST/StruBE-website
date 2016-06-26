@@ -19,6 +19,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from . import views
+import news.views
 
 urlpatterns = [
     url(r'^$', views.home, name="home"),
@@ -26,10 +27,12 @@ urlpatterns = [
     url(r'^account/', include('myaccount.urls')),
     url(r'^contact/', views.MyContactView.as_view(), name="envelope-contact"),
     url(r'^contact/', views.MyContactView.as_view(), name="contact"),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^people/', views.people, name="people"),
     url(r'^contaminer/', include('contaminer.urls', namespace="ContaMiner")),
     url(r'^publications/', include('publications.urls',
         namespace="Publications")),
+    url(r'^news/', include('news.urls', namespace="news")),
 ]
 
 handler403 = 'StruBE.views.custom403'
