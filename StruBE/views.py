@@ -30,7 +30,7 @@ from news.models import Article
 import news.views
 
 def home(request):
-    if Article.objects.all() == []:
+    if len(Article.objects.all()) == 0:
         return render(request, 'home.html')
     else:
         return news.views.latest(request)
