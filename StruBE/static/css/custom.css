@@ -49,6 +49,10 @@ nav.navbar {
     margin: 0;
 }
 
+nav .glyphicon {
+    color: white;
+}
+
 .nav .dropdown-menu {
     background-color: #003B75;
 }
