@@ -42,11 +42,10 @@ a:hover {
     margin: 1.5em;
 }
 
-#navibar {
+nav.navbar {
     background-color: #003B75;
     clear: both;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 6px;
     margin: 0;
 }
 
@@ -54,16 +53,16 @@ a:hover {
     background-color: #003B75;
 }
 
-#navibar .nav li {
+nav .nav li {
     padding: 0.5em;
 }
 
-#navibar .nav li a {
+nav .nav li a {
     color: white;
     padding: 0 15px;
 }
 
-#navibar .nav li a:hover, #navibar .nav .open>a{
+nav .nav li a:hover, #navibar .nav .open>a{
     color: #F28F00
 }
 

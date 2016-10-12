@@ -34,3 +34,14 @@
         </ul>
     </li>
 </ul>
+
+<ul class="nav navbar-nav navbar-right">
+{% if user.is_authenticated %}
+    <li><a href="{% url "account_settings" %}">
+        {{ user.get_username }}</a></li>
+    <li><a href="{% url "account_logout" %}">
+        Log out</a></li>
+{% else %}
+    <li><a href="{% url "account_login" %}">Log in</a></li>
+{% endif %}
+</ul>
