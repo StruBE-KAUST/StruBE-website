@@ -49,53 +49,39 @@ a:hover {
     clear: both;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin-bottom: 0;
-}
-
-#navibar p {
-    color: white;
-    display: block;
-    padding: 1em;
     margin: 0;
-    text-align: right;
 }
 
-#navibar a {
+.nav .dropdown-menu {
+    background-color: #218acd;
+}
+
+#navibar .nav li {
+    padding: 0.5em;
+}
+
+#navibar .nav li a {
     color: white;
+    padding: 0 15px;
 }
 
-#navibar a:hover{
+#navibar .nav li a:hover, #navibar .nav .open>a{
     color: #F28F00
 }
 
-.navbox {
+/* Overwrite bootstrap*/
+.nav .dropdown-menu li a {
     color: white;
-    display: block;
-    list-style: outside none none;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
-
-.navbox li {
-    display: block;
-    float: left;
-    margin: 0;
-    padding: 0;
-}
-
-.navbox li a {
-    display: block;
-    text-decoration: none;
-    color: white;
-    margin: 0;
-    padding: 1em;
-    font-size: 14px;
     font-weight: bold;
 }
+.nav .dropdown-menu li a:hover {
+    color: #F28F00;;
+}
+/*End*/
 
-.navbox li a:hover {
-    background-color: #aac5e3;
+.nav .logo {
+    height: 1.5em;
+    margin-right: 1em;
 }
 
 #content-wrapper {
