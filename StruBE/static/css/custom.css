@@ -12,7 +12,7 @@ html, body {
     font-family: "RotisSansSerif", Arial;
     font-size: 18px;
     line-height: 1.3em;
-    background: linear-gradient(white, #bcbcbc) no-repeat;
+    background: linear-gradient(white, #BCBCBC) no-repeat;
     background-attachment: fixed;
 }
 
@@ -23,7 +23,7 @@ a:link, a:visited {
 }
 
 a:hover {
-    color: #218ACD;
+    color: #003B75;
 }
 
 .row {
@@ -36,14 +36,14 @@ a:hover {
 }
 
 #title {
-    color: #1a325f;
+    color: #003B75;
     font-size: 2em;
     font-weight: bold;
     margin: 1.5em;
 }
 
 #navibar {
-    background-color: #218acd;
+    background-color: #003B75;
     clear: both;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -51,7 +51,7 @@ a:hover {
 }
 
 .nav .dropdown-menu {
-    background-color: #218acd;
+    background-color: #003B75;
 }
 
 #navibar .nav li {
@@ -115,7 +115,7 @@ p {
 dl dt {
     margin: 1em;;
     padding: 0;
-    border-bottom: solid #218ACD thin;
+    border-bottom: solid #003B75 thin;
     vertical-align: bottom;
 }
 
@@ -125,7 +125,7 @@ dl dt span {
     margin-bottom: 0;
     padding: 0.4em;
     padding-bottom: 0;
-    background-color: #218ACD;
+    background-color: #003B75;
     color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -161,13 +161,13 @@ dl h5 {
 }
 
 #nav-ver li a:hover {
-    background-color: #3695D1;
+    background-color: #003B75;
     color: white;
 }
 
 .ladda-button, .btn-primary {
     border-radius: 10px;
-    background-color: #218ACD;
+    background-color: #003B75;
 }
 
 .right {
