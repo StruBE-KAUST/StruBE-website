@@ -50,12 +50,7 @@
             </div>
         </div>
         <div class="row" id="content-wrapper">
-            <div class="col-sm-2">
-                {% block left %}
-                {% include "apps_list.html" %}
-                {% endblock %}
-            </div>
-            <div class="col-sm-10 content">
+            <div class="col-sm-12 content">
                 {% include "messages.html" %}
                 {% block content %}
                 {% endblock %}
