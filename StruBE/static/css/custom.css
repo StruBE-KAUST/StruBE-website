@@ -47,6 +47,7 @@ nav.navbar {
     clear: both;
     border-radius: 6px;
     margin: 0;
+    min-height: 0px;
 }
 
 nav .glyphicon {
@@ -57,26 +58,20 @@ nav .glyphicon {
     background-color: #003B75;
 }
 
-nav .nav li {
-    padding: 0.5em;
-}
-
 nav .nav li a {
     color: white;
-    padding: 0 15px;
+    font-size: 0.8em;
+    padding: 0.2em 0.6em;
 }
 
-nav .nav li a:hover, nav .nav .open>a{
-    color: #F28F00
+nav.navbar li a:hover, nav.navbar li.open>a, nav.navbar li a.dropdown-toggle:focus {
+    background-color: #5284C4;
 }
 
 /* Overwrite bootstrap*/
 .nav .dropdown-menu li a {
     color: white;
     font-weight: bold;
-}
-.nav .dropdown-menu li a:hover {
-    color: #F28F00;;
 }
 /*End*/
 
