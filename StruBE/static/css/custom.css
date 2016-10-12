@@ -62,7 +62,7 @@ nav .nav li a {
     padding: 0 15px;
 }
 
-nav .nav li a:hover, #navibar .nav .open>a{
+nav .nav li a:hover, nav .nav .open>a{
     color: #F28F00
 }
 
