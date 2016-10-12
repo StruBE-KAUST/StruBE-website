@@ -31,11 +31,9 @@
             </div>
         </div>
         <nav class="navbar">
-            <div class="container-fluid">
-                {% block navigation %}
-                {% include "navigation.html" %}
-                {% endblock %}
-            </div>
+            {% block navigation %}
+            {% include "navigation.html" %}
+            {% endblock %}
         </nav>
         <div class="row" id="content-wrapper">
             <div class="col-sm-12 content">
