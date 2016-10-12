@@ -7,15 +7,13 @@
          url('/static/fonts/RotisSansSerif.svg#RotisSansSerif') format('svg');
 }
 
-html {
-    background: #d1d9da;
-}
-
-body {
-    font-family: "RotisSansSerif",Arial;
+html, body {
+    min-height: 100% !important;
+    font-family: "RotisSansSerif", Arial;
     font-size: 18px;
     line-height: 1.3em;
-    background: linear-gradient(white, #d1d9da) no-repeat;
+    background: linear-gradient(white, #bcbcbc) no-repeat;
+    background-attachment: fixed;
 }
 
 a:link, a:visited {
