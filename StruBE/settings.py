@@ -196,10 +196,11 @@ EMAIL_HOST_USER = config.get('EMAIL', 'host_user')
 EMAIL_HOST_PASSWORD = config.get('EMAIL', 'host_password')
 EMAIL_USE_SSL = eval(config.get('EMAIL', 'ssl'))
 EMAIL_USE_TLS = eval(config.get('EMAIL', 'tls'))
-DEFAULT_MAIL = config.get('EMAIL', 'defaultmail')
+DEFAULT_MAIL = config.get('EMAIL', 'default_mail_dest')
+DEFAULT_MAIL_FROM = config.get('EMAIL', 'default_mail_from')
 
 # Contact
-DEFAULT_FROM_EMAIL = config.get('EMAIL', 'default_from')
+DEFAULT_FROM_EMAIL = config.get('EMAIL', 'default_mail_from')
 ENVELOPE_EMAIL_RECIPIENTS = [DEFAULT_MAIL]
 
 # Configure crispy-forms

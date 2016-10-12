@@ -27,9 +27,9 @@ host_password =
 tls = True
 ssl = False
 # Dest for mails from django (admin, dev, ...)
-defaultmail = 
+default_mail_dest = 
 # From field for mails send from django
-default_from = noreply@example.com
+default_mail_from = noreply@example.com
 
 [DEFAULT]
 debug = True
