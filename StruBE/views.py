@@ -38,6 +38,9 @@ def home(request):
 def people(request):
     return render(request, 'people.html')
 
+def labdir(request):
+    return render(request, 'labdir.html')
+
 class MyContactView(FormMessagesMixin, ContactView):
     template_name = "envelope/contact.html"
 #TODO : success_url = reverse(qqch)

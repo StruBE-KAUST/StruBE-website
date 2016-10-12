@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^contact/', views.MyContactView.as_view(), name="contact"),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^people/', views.people, name="people"),
+    url(r'^labdir/', views.labdir, name="labdir"),
     url(r'^contaminer/', include('contaminer.urls', namespace="ContaMiner")),
     url(r'^publications/', include('publications.urls',
         namespace="Publications")),

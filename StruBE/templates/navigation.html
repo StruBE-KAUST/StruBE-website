@@ -1,5 +1,25 @@
+{% load staticfiles %}
 <ul class="navbox">
     <li><a href="{% url 'home' %}">Home</a></li>
     <li><a href="{% url 'people' %}">People</a></li>
     <li><a href="{% url 'Publications:home' %}">Publications</a></li>
+    <li>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Internal links
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a target="_blank" href="https://strube.herokuapp.com">
+	        <img class="logo" alt="rotmic" src="{% static "images/rotmic.png" %}" />
+		Rotmic
+            </a></li>
+	    <li><a target="_blank" href="https://labhamster-arold.herokuapp.com">
+                <img class="logo" alt="labhamster" src="{% static "images/labhamster.png" %}" />
+		Labhamster
+	    </a></li>
+            <li><a href="{% url 'labdir' %}">
+                    <img class="logo" alt="lab directory"
+                        src="{% static "images/labdir.png" %}" />
+                    Lab directory</a></li>
+        </ul>
+    </li>
 </ul>

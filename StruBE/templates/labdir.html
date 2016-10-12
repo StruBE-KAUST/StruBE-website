@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}StruBE{% endblock %}
+{% block app_name %}StruBE{% endblock %}
+{% block content %}<h1>How to acces to the lab directory</h1>
+<p>First of all, you need a Noor account. If you do not have one yet, please request one <a target="_blank" href="http://rcweb1.kaust.edu.sa/group/rc/IT_Forms/acct_req.html">here</a>.</p>
+<p>When your noor account is created, contact IT Helpdesk to ask for the access to <code>/rcsdata/strube</code>.</p>
+<p>Once the access granted, you can read all the files in the directory, add your own, and modify some of them. Depending on your operating system, the access to the lab directory is different.
+<dl>
+    <dt>Noor2</dt>
+    <dd>To access the lab directory from Noor2, simply go to /rcsdata/strube.
+    For example :<code>cd /rcsdata/strube</code></dd>
+    <dt>Windows 7</dt>
+    <dd>Open your file browser, and click on the top bar.</p>
+    <p class="row">
+        <img src="{% static "images/windows7.png" %}" alt="windows top bar" class="img-responsive col-md-9"/>
+    </p>
+    <p>Then write the address of the directory : <code>\\noor-cifs3.kaust.edu.sa\strube</code>.
+	Press <kbd>Enter</kbd>, and, if needed, use your credentials to connect.
+    </dd>
+    <dt>OS X</dt>
+    <dd>Open your file browser, and click on <kbd>Go</kbd> then <kbd>Connect to Server</kbd></p>
+    <p class="row">
+        <img src="{% static "images/osx.png" %}" alt="OS X top bar" class="img-responsive col-md-9"/>
+    </p>
+    <p>Then write the address of the directory : <code>smb://noor-cifs3.kaust.edu.sa/strube</code>. Press <kbd>Enter</kbd>, and, if needed, use your credentials to connect.
+    </dd>
+    <dt>Linux / others</dt>
+    <dd><p>If you use something else, I guess you know what to do with that :
+        <code>smb://noor-cifs3.kaust.edu.sa/strube</code>
+    </dd>
+</dl>
+{% block articles %}
+{% endblock %}
+{% endblock %}
