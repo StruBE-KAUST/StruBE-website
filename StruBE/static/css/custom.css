@@ -60,8 +60,12 @@ nav .glyphicon {
 
 nav .nav li a {
     color: white;
+    border-right: thin solid #7BA0BD;
     font-size: 0.8em;
     padding: 0.2em 0.6em;
+}
+nav .nav li a.last {
+    border-right: none;
 }
 
 nav.navbar li a:hover, nav.navbar li.open>a, nav.navbar li a.dropdown-toggle:focus {
