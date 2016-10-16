@@ -143,30 +143,6 @@ dl h5 {
     font-weight: bold;
 }
 
-#nav-ver {
-    list-style: none;
-    padding: 0;
-    margin-top: 1em;
-    text-align: left;
-}
-
-#nav-ver li {
-    display: block;
-    border: 1px solid #D3EBFC;
-    text-decoration: none;
-}
-
-#nav-ver li a {
-    display: block;
-    padding: 0.5em;
-    color: #1265A4;
-}
-
-#nav-ver li a:hover {
-    background-color: #003B75;
-    color: white;
-}
-
 .ladda-button, .btn-primary {
     border-radius: 10px;
     background-color: #003B75;
