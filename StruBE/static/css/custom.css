@@ -31,6 +31,7 @@ a:hover {
 .header {
     display: inline;
     margin: 1em;
+    border-right: thin #CCCCCC solid;
 }
 
 #title {
