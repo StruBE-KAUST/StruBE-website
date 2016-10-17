@@ -20,15 +20,12 @@
 
 <body>
     <div class="container">
-        <div class="row" id="header">
-            <div class="col-sm-8">
-                <img class="img-responsive" src="{% static "images/header.png" %}" alt="CBRC Logo" />
-            </div>
-            <div class="col-sm-4">
-                <h1 id="title">
+        <div class="row">
+            <img class="img-responsive header"
+                src="{% static "images/header.jpg" %}" alt="KAUST header" />
+            <h1 id="title">
                 {% block app_name %}BESE{% endblock %}
-                </h1>
-            </div>
+            </h1>
         </div>
         <div class="row">
             <nav class="navbar">
