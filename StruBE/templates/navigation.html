@@ -14,14 +14,8 @@
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li>
-                    <a href="{% url 'ContaMiner:home'%}">ContaMiner</a>
-                </li>
-                <li>
-                    <a href="{% url 'ContaMiner:contaminants' %}">
-                        ContaBase
-                    </a>
-                </li>
+                {% load softwares_links %}
+                {% software_links %}
             </ul>
         </li>
         <li>
@@ -42,7 +36,7 @@
                         href="https://labhamster-arold.herokuapp.com">
                         <img class="logo" alt="labhamster"
                             src="{% static "images/labhamster.png" %}" />
-                            Labhamster
+                        Labhamster
                     </a>
                 </li>
                 <li>

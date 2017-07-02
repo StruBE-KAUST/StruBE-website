@@ -107,6 +107,8 @@ ALLOWED_HOSTS = eval(config.get('DEFAULT', 'hosts'))
 log.debug("Allowed hosts : " + str(ALLOWED_HOSTS))
 
 # Application definition
+CUSTOM_APPS = [
+        a.strip() for a in config.get('APPLICATIONS', 'names').split(',')]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -121,9 +123,7 @@ INSTALLED_APPS = [
     'myaccount',
     'crispy_forms',
     'StruBE',
-    'contaminer',
-    'ProteinViewer',
-]
+] + CUSTOM_APPS
 log.debug("Applications : " + str(INSTALLED_APPS))
 
 # Load Middlewares
