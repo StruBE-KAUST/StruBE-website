@@ -29,16 +29,15 @@ a:hover {
 }
 
 .header {
-    display: inline;
+    display: flex;
+    justify-content: center;
     margin: 1em;
-    border-right: thin #CCCCCC solid;
 }
 
 #title {
     color: #003B75;
     font-size: 2em;
     font-weight: bold;
-    margin: 1.5em;
     display: inline;
 }
 
