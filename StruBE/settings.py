@@ -64,6 +64,11 @@ SITE_ID = 1
 # DEBUG from config.ini
 DEBUG = eval(config.get('DEFAULT', 'debug'))
 
+# Admin
+ADMINS = [(
+    config.get('DEFAULT', 'admin_name'),
+    config.get('DEFAULT', 'admin_mail'))]
+
 # Logging
 LOGGING = {}
 if DEBUG:
@@ -181,6 +186,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, static_path)
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'StruBE/static'),
         ]
+
+if DEBUG:
+    STATICFILES_DIRS.append(STATIC_ROOT)
+    STATIC_ROOT = ""
+
+log.debug("Static directories: " + str(STATICFILES_DIRS))
 
 # Media files (Uploaded by users)
 MEDIA_URL = '/media/'
