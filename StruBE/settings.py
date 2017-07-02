@@ -100,7 +100,7 @@ else:
     raise ValueError
 
 DATABASES = {'default': default_db}
-log.debug("Database configured : " + str(DATABASES))
+log.debug("Database configured")
 
 # ALLOWED_HOSTS from config.ini
 ALLOWED_HOSTS = eval(config.get('DEFAULT', 'hosts'))
@@ -122,6 +122,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'StruBE',
     'contaminer',
+    'ProteinViewer',
 ]
 log.debug("Applications : " + str(INSTALLED_APPS))
 
