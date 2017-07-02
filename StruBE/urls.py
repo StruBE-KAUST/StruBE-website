@@ -18,17 +18,26 @@
 
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.home, name="home"),
-    url(r'^admin/', admin.site.urls),
-    url(r'^account/', include('myaccount.urls')),
-    url(r'^contact/', views.MyContactView.as_view(), name="envelope-contact"),
-    url(r'^contact/', views.MyContactView.as_view(), name="contact"),
-    url(r'^tinymce/', include('tinymce.urls')),
-    url(r'^labdir/', views.labdir, name="labdir"),
-    url(r'^instruments/', views.instruments, name="instruments"),
+    url(r'^$',
+        TemplateView.as_view(template_name="home.html")),
+    url(r'^admin/',
+        admin.site.urls),
+    url(r'^account/',
+        include('myaccount.urls')),
+    url(r'^contact/',
+        views.MyContactView.as_view(), name="envelope-contact"),
+    url(r'^contact/',
+        views.MyContactView.as_view(), name="contact"),
+    url(r'^tinymce/',
+        include('tinymce.urls')),
+    url(r'^labdir/',
+        TemplateView.as_view(template_name="labdir.html")),
+    url(r'^instruments/',
+        TemplateView.as_view(template_name="instruments.html")),
     url(r'^contaminer/', include('contaminer.urls', namespace="ContaMiner")),
 ]
 

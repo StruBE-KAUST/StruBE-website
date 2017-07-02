@@ -27,18 +27,6 @@ from braces.views import FormMessagesMixin
 
 from .forms import MyContactForm
 
-def home(request):
-    return render(request, 'home.html')
-
-def people(request):
-    return render(request, 'people.html')
-
-def labdir(request):
-    return render(request, 'labdir.html')
-
-def instruments(request):
-    return render(request, 'instruments.html')
-
 class MyContactView(FormMessagesMixin, ContactView):
     template_name = "envelope/contact.html"
 #TODO : success_url = reverse(qqch)
