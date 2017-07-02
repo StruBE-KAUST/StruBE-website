@@ -1,4 +1,9 @@
 # Copy this file on config.ini
+#
+[APPLICATIONS]
+# List of applications to make accessible
+names = contaminer
+
 [PATHS]
 data = data/
 log = data/log/
