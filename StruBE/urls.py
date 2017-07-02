@@ -23,7 +23,8 @@ from . import views
 
 urlpatterns = [
     url(r'^$',
-        TemplateView.as_view(template_name="home.html")),
+        TemplateView.as_view(template_name="home.html"),
+        name='home'),
     url(r'^admin/',
         admin.site.urls),
     url(r'^account/',
@@ -35,9 +36,11 @@ urlpatterns = [
     url(r'^tinymce/',
         include('tinymce.urls')),
     url(r'^labdir/',
-        TemplateView.as_view(template_name="labdir.html")),
+        TemplateView.as_view(template_name="labdir.html"),
+        name='labdir'),
     url(r'^instruments/',
-        TemplateView.as_view(template_name="instruments.html")),
+        TemplateView.as_view(template_name="instruments.html"),
+        name='instruments'),
     url(r'^contaminer/', include('contaminer.urls', namespace="ContaMiner")),
 ]
 
