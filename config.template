@@ -20,20 +20,21 @@ host = 127.0.0.1
 port = 5432
 
 [EMAIL]
-host = webmail.kaust.edu.sa
+host = mail.example.com
 port = 465
-host_user = cbrc-strube
+host_user =
 host_password =
 tls = True
 ssl = False
 # Dest for mails from django (admin, dev, ...)
-default_mail_dest = 
-# From field for mails send from django
+default_mail_dest = contact@example.com
+# "From" field for mails sent from django
 default_mail_from = noreply@example.com
 
 [DEFAULT]
 debug = True
+admin_name = You
+admin_mail = contact@example.com
 
 # If DEBUG = False
 hosts = ["localhost"]
-servermail =

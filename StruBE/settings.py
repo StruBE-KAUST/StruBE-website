@@ -225,7 +225,7 @@ DATA_PATH = config.get('PATHS', 'data')
 if not DEBUG:
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
-    SERVER_MAIL = config.get('DEFAULT', 'servermail')
+    SERVER_MAIL = DEFAULT_MAIL_FROM
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
