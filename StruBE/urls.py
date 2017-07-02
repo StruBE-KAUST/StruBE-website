@@ -18,6 +18,7 @@
 
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.apps import apps
 from django.views.generic import TemplateView
 from . import views
 
@@ -41,8 +42,22 @@ urlpatterns = [
     url(r'^instruments/',
         TemplateView.as_view(template_name="instruments.html"),
         name='instruments'),
-    url(r'^contaminer/', include('contaminer.urls', namespace="ContaMiner")),
 ]
+
+if apps.is_installed('contaminer'):
+    urlpatterns.append(
+        url(r'^contaminer/',
+            include('contaminer.urls', namespace="ContaMiner")))
+
+if apps.is_installed('ProteinViewer'):
+    urlpatterns.append(
+        url(r'^viewer/',
+            include('ProteinViewer.urls', namespace="ProteinViewer")))
+
+if apps.is_installed('NMRViewer'):
+    urlpatterns.append(
+        url(r'^nmrviewer/',
+            include('NMRViewer.urls', namespace="NMRViewer")))
 
 handler403 = 'StruBE.views.custom403'
 handler404 = 'StruBE.views.custom404'

@@ -31,4 +31,12 @@ def software_links():
             {'name': 'ContaBase', 'href': reverse('ContaMiner:contabase')},
             ])
 
+    if apps.is_installed('ProteinViewer'):
+        custom_apps.append(
+            {'name': 'ProteinViewer', 'href': reverse('ProteinViewer:home')})
+
+    if apps.is_installed('NMRViewer'):
+        custom_apps.append(
+            {'name': 'NMRViewer', 'href': reverse('NMRViewer:home')})
+
     return {'links': custom_apps}
