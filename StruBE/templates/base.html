@@ -2,7 +2,7 @@
 <html lang="en-EN">
 <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}Title{% endblock %}</title>
+    <title>{% block title %}StruBE{% endblock %}</title>
     {% load staticfiles %}
     <link rel="icon" type="image/png" href="{% static "images/favicon.png" %}" />
     <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="{% static "images/favicon.ico" %}" /><![endif]-->
@@ -16,62 +16,39 @@
     <link rel="stylesheet" href="{% static "css/ladda-themeless.min.css" %}"/>
     <link rel="stylesheet" href="{% static "css/custom.css" %}" />
     <meta name="viewport" content="width=device-width">
+    {% block head %}
+    {% endblock %}
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row header">
-            <div class="col-sm-8">
-                <img class="img-responsive" src="{% static "images/header.png" %}" alt="CBRC Logo" />
-            </div>
             <div class="col-sm-4">
+                <img class="img-responsive"
+                    src="{% static "images/header.jpg" %}" alt="KAUST header" />
+            </div>
+            <div class="col-sm-8 header">
                 <h1 id="title">
-                {% block app_name %}BESE{% endblock %}
+                    {% block app_name %}Structural Biology and Engineering{% endblock %}
                 </h1>
             </div>
         </div>
-        <div class="row" id="navibar">
-            <div class="col-sm-9">
+        <div class="row">
+            <nav class="navbar">
                 {% block navigation %}
                 {% include "navigation.html" %}
                 {% endblock %}
-            </div>
-            <div class="col-sm-3">
-                <ul class="navbox right">
-                {% if user.is_authenticated %}
-                    <li><a href="{% url "account_settings" %}">
-                        {{ user.get_username }}</a></li>
-                    <li><a href="{% url "account_logout" %}">
-                        Log out</a></li>
-                {% else %}
-                    <li><a href="{% url "account_login" %}">Log in</a></li>
-                {% endif %}
-                </ul>
-            </div>
+            </nav>
         </div>
-        <div class="row" id="content-wrapper">
-            <div class="col-sm-2">
-                {% block left %}
-                {% include "apps_list.html" %}
-                {% endblock %}
-            </div>
-            <div class="col-sm-10 content">
-                {% include "messages.html" %}
-                {% block content %}
-                {% endblock %}
-            </div>
+        <div class="row content">
+            {% include "messages.html" %}
+            {% block content %}
+            {% endblock %}
         </div>
         <div class="row" id="footer">
             {% block footer %}
-            <div class="col-sm-10">
-                <p>© 2011 All Rights Reserved. King Abdullah University of Science and Technology</p>
-            </div>
-            <div class="col-sm-1">
-                <p><a id="contact" href="{% url 'envelope-contact' %}">Contact us</a></p>
-            </div>
-            <div class="col-sm-1">
-                <p><a id="pp" href="http://www.kaust.edu.sa/privacy-policy.html">Privacy Policy</a></p>
-            </div>
+            <p>&copy; 2016 King Abdullah University of Science and Technology,
+            All rights reserved. | Team site</p>
             {% endblock %}
         </div>
     </div>

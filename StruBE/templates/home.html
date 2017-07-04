@@ -1,9 +1,27 @@
 {% extends "base.html" %}
-{% block title %}StruBE{% endblock %}
-{% block app_name %}StruBE{% endblock %}
-{% block content %}<h1>Welcome on StruBE website</h1>
-<p>This website is under construction. If you encounter any kind of
-problem, Please <a href="{% url "contact" %}">let us know</a>.</p>
+{% block content %}<h1>Welcome to the StruBE website</h1>
+{% load staticfiles %}
+<img class="img-responsive" src="{% static "images/strube-group-photo.png" %}"
+/>
+
+<h2>Research Interests</h2>
+    <p>Prof. Arold's research is dedicated to elucidating the molecular
+    basis of the function and (de)regulation of proteins central to cellular
+    key signaling networks in plants, and animals. Investigations are based on
+    an integrated structural biology approach that combines functional and
+    structural data from multiple sources (small angle x-ray scattering, X-ray
+    crystallography, NMR, cryo-EM, computational methods, biochemistry, ligand
+    binding assays and functional analyses). Results are translated to engineer
+    molecules with desired properties (e.g. reporters or inhibitors).
+    Structural biology approaches are also used to enhance computational
+    methods for functional annotation of genes (system-wide or focused).
+    </p>
+
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <img class="img-responsive" src="{% static "images/FAK.png" %}" />
+        </div>
+    </div>
 {% block articles %}
 {% endblock %}
 {% endblock %}

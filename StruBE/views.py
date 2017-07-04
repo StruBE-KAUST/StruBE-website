@@ -26,17 +26,6 @@ from envelope.views import ContactView
 from braces.views import FormMessagesMixin
 
 from .forms import MyContactForm
-from news.models import Article
-import news.views
-
-def home(request):
-    if len(Article.objects.all()) == 0:
-        return render(request, 'home.html')
-    else:
-        return news.views.latest(request)
-
-def people(request):
-    return render(request, 'people.html')
 
 class MyContactView(FormMessagesMixin, ContactView):
     template_name = "envelope/contact.html"

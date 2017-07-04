@@ -7,15 +7,15 @@
          url('/static/fonts/RotisSansSerif.svg#RotisSansSerif') format('svg');
 }
 
-html {
-    background: #d1d9da;
-}
-
-body {
-    font-family: "RotisSansSerif",Arial;
+html, body {
+    height: 100% !important;
+    font-family: "RotisSansSerif", Arial;
     font-size: 18px;
     line-height: 1.3em;
-    background: linear-gradient(white, #d1d9da) no-repeat;
+    background: linear-gradient(white, #BCBCBC) no-repeat;
+    background-attachment: fixed;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 a:link, a:visited {
@@ -25,97 +25,81 @@ a:link, a:visited {
 }
 
 a:hover {
-    color: #218ACD;
-}
-
-.row {
-    margin: 1em;
-    background-color: white;
+    color: #003B75;
 }
 
 .header {
-    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    margin: 1em;
 }
 
 #title {
-    color: #1a325f;
+    color: #003B75;
     font-size: 2em;
     font-weight: bold;
-    margin: 1.5em;
+    display: inline;
 }
 
-#navibar {
-    background-color: #218acd;
+nav.navbar {
+    background-color: #003B75;
     clear: both;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-bottom: 0;
-}
-
-#navibar p {
-    color: white;
-    display: block;
-    padding: 1em;
+    border-radius: 6px;
     margin: 0;
-    text-align: right;
+    min-height: 0px;
 }
 
-#navibar a {
+nav .glyphicon {
     color: white;
 }
 
-#navibar a:hover{
-    color: #F28F00
+.nav .dropdown-menu {
+    background-color: #003B75;
 }
 
-.navbox {
+nav .nav li a {
     color: white;
-    display: block;
-    list-style: outside none none;
-    text-align: center;
-    padding: 0;
-    margin: 0;
+    border-right: thin solid #7BA0BD;
+    font-size: 0.8em;
+    padding: 0.2em 0.6em;
+}
+nav .nav li a.last {
+    border-right: none;
 }
 
-.navbox li {
-    display: block;
-    float: left;
-    margin: 0;
-    padding: 0;
+nav.navbar li a:hover, nav.navbar li.open>a, nav.navbar li a.dropdown-toggle:focus {
+    background-color: #5284C4;
 }
 
-.navbox li a {
-    display: block;
-    text-decoration: none;
+/* Overwrite bootstrap*/
+.nav .dropdown-menu li a {
     color: white;
-    margin: 0;
-    padding: 1em;
-    font-size: 14px;
     font-weight: bold;
 }
+/*End*/
 
-.navbox li a:hover {
-    background-color: #aac5e3;
-}
-
-#content-wrapper {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    margin-top: 0;
+.nav .logo {
+    height: 1.5em;
+    margin-right: 1em;
 }
 
 .content {
-    border-left: solid #CCEAFF;
+    background-color: white;
     padding: 2em;
+    border-radius: 6px;
+    margin: 1em -15px 1em -15px;
 }
 
 #footer {
-    border-radius: 10px;
-    padding: 1em;
+    background-color: #003B75;
+    color: white;
+    border-radius: 6px;
 }
 
 #footer p {
+    text-align: center;
     margin: 0;
+    font-size: 0.6em;
 }
 
 h1, h2, h3 {
@@ -129,7 +113,7 @@ p {
 dl dt {
     margin: 1em;;
     padding: 0;
-    border-bottom: solid #218ACD thin;
+    border-bottom: solid #003B75 thin;
     vertical-align: bottom;
 }
 
@@ -139,7 +123,7 @@ dl dt span {
     margin-bottom: 0;
     padding: 0.4em;
     padding-bottom: 0;
-    background-color: #218ACD;
+    background-color: #003B75;
     color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -155,37 +139,9 @@ dl h5 {
     font-weight: bold;
 }
 
-#nav-ver {
-    list-style: none;
-    padding: 0;
-    margin-top: 1em;
-    text-align: left;
-}
-
-#nav-ver li {
-    display: block;
-    border: 1px solid #D3EBFC;
-    text-decoration: none;
-}
-
-#nav-ver li a {
-    display: block;
-    padding: 0.5em;
-    color: #1265A4;
-}
-
-#nav-ver li a:hover {
-    background-color: #3695D1;
-    color: white;
-}
-
 .ladda-button, .btn-primary {
     border-radius: 10px;
-    background-color: #218ACD;
-}
-
-.right {
-    float: right;
+    background-color: #003B75;
 }
 
 .extra-link {
@@ -194,6 +150,12 @@ dl h5 {
 
 .no-bullet{
     list-style: none;
+}
+
+#news {
+    padding: 1em;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 #contaminants .form-group {
