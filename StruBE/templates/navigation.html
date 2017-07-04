@@ -1,5 +1,70 @@
-<ul class="navbox">
-    <li><a href="{% url 'home' %}">Home</a></li>
-    <li><a href="{% url 'people' %}">People</a></li>
-    <li><a href="{% url 'Publications:home' %}">Publications</a></li>
-</ul>
+{% load staticfiles %}
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+        data-target="#navbar-main">
+        <span class="glyphicon glyphicon-th-list"></span>
+    </button>
+</div>
+<div class="collapse navbar-collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Softwares
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                {% load softwares_links %}
+                {% software_links %}
+            </ul>
+        </li>
+        <li>
+            <a class="dropdown-toggle last" data-toggle="dropdown" href="#">
+                Internal links
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a target="_blank" href="https://strube.herokuapp.com">
+                        <img class="logo" alt="rotmic"
+                            src="{% static "images/rotmic.png" %}" />
+                        Rotmic
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank"
+                        href="https://labhamster-arold.herokuapp.com">
+                        <img class="logo" alt="labhamster"
+                            src="{% static "images/labhamster.png" %}" />
+                        Labhamster
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'labdir' %}">
+                        <img class="logo" alt="lab directory"
+                            src="{% static "images/labdir.png" %}" />
+                        Lab directory
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'instruments' %}">
+                        <img class="logo" alt="instruments"
+                            src="{% static "images/instruments.png" %}" />
+                        Instruments
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+        <li><a href="{% url "account_settings" %}">
+            {{ user.get_username }}</a></li>
+        <li><a class="last" href="{% url "account_logout" %}">
+            Log out</a></li>
+        {% else %}
+        <li><a class="last" href="{% url "account_login" %}">Log in</a></li>
+        {% endif %}
+    </ul>
+</div>

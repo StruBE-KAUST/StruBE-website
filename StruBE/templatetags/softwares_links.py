@@ -16,10 +16,27 @@
 ##    with this program; if not, write to the Free Software Foundation, Inc.,
 ##    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-from __future__ import unicode_literals
+from django import template
+from django.urls import reverse
+from django.apps import apps
 
-from django.apps import AppConfig
+register = template.Library()
 
+@register.inclusion_tag('softwares_links.html')
+def software_links():
+    custom_apps = []
+    if apps.is_installed('contaminer'):
+        custom_apps.extend([
+            {'name': 'ContaMiner', 'href': reverse('ContaMiner:home')},
+            {'name': 'ContaBase', 'href': reverse('ContaMiner:contabase')},
+            ])
 
-class MyaccountConfig(AppConfig):
-    name = 'myaccount'
+    if apps.is_installed('ProteinViewer'):
+        custom_apps.append(
+            {'name': 'ProteinViewer', 'href': reverse('ProteinViewer:home')})
+
+    if apps.is_installed('NMRViewer'):
+        custom_apps.append(
+            {'name': 'NMRViewer', 'href': reverse('NMRViewer:home')})
+
+    return {'links': custom_apps}

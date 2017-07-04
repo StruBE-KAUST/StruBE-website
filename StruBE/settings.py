@@ -64,6 +64,11 @@ SITE_ID = 1
 # DEBUG from config.ini
 DEBUG = eval(config.get('DEFAULT', 'debug'))
 
+# Admin
+ADMINS = [(
+    config.get('DEFAULT', 'admin_name'),
+    config.get('DEFAULT', 'admin_mail'))]
+
 # Logging
 LOGGING = {}
 if DEBUG:
@@ -95,13 +100,15 @@ else:
     raise ValueError
 
 DATABASES = {'default': default_db}
-log.debug("Database configured : " + str(DATABASES))
+log.debug("Database configured")
 
 # ALLOWED_HOSTS from config.ini
 ALLOWED_HOSTS = eval(config.get('DEFAULT', 'hosts'))
 log.debug("Allowed hosts : " + str(ALLOWED_HOSTS))
 
 # Application definition
+CUSTOM_APPS = [
+        a.strip() for a in config.get('APPLICATIONS', 'names').split(',')]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -116,10 +123,7 @@ INSTALLED_APPS = [
     'myaccount',
     'crispy_forms',
     'StruBE',
-    'contaminer',
-    'publications',
-    'news',
-]
+] + CUSTOM_APPS
 log.debug("Applications : " + str(INSTALLED_APPS))
 
 # Load Middlewares
@@ -184,6 +188,12 @@ STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'StruBE/static'),
         ]
 
+if DEBUG:
+    STATICFILES_DIRS.append(STATIC_ROOT)
+    STATIC_ROOT = ""
+
+log.debug("Static directories: " + str(STATICFILES_DIRS))
+
 # Media files (Uploaded by users)
 MEDIA_URL = '/media/'
 media_path = config.get('PATHS', 'media')
@@ -196,10 +206,11 @@ EMAIL_HOST_USER = config.get('EMAIL', 'host_user')
 EMAIL_HOST_PASSWORD = config.get('EMAIL', 'host_password')
 EMAIL_USE_SSL = eval(config.get('EMAIL', 'ssl'))
 EMAIL_USE_TLS = eval(config.get('EMAIL', 'tls'))
-DEFAULT_MAIL = config.get('EMAIL', 'defaultmail')
+DEFAULT_MAIL = config.get('EMAIL', 'default_mail_dest')
+DEFAULT_MAIL_FROM = config.get('EMAIL', 'default_mail_from')
 
 # Contact
-DEFAULT_FROM_EMAIL = config.get('EMAIL', 'default_from')
+DEFAULT_FROM_EMAIL = config.get('EMAIL', 'default_mail_from')
 ENVELOPE_EMAIL_RECIPIENTS = [DEFAULT_MAIL]
 
 # Configure crispy-forms
@@ -214,7 +225,7 @@ DATA_PATH = config.get('PATHS', 'data')
 if not DEBUG:
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
-    SERVER_MAIL = config.get('DEFAULT', 'servermail')
+    SERVER_MAIL = DEFAULT_MAIL_FROM
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
