@@ -188,10 +188,6 @@ STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'StruBE/static'),
         ]
 
-if DEBUG:
-    STATICFILES_DIRS.append(STATIC_ROOT)
-    STATIC_ROOT = ""
-
 log.debug("Static directories: " + str(STATICFILES_DIRS))
 
 # Media files (Uploaded by users)
