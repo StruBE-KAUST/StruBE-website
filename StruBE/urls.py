@@ -16,7 +16,9 @@
 ##    with this program; if not, write to the Free Software Foundation, Inc.,
 ##    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+from django.conf import settings
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.apps import apps
 from django.views.generic import TemplateView
@@ -43,6 +45,10 @@ urlpatterns = [
         TemplateView.as_view(template_name="instruments.html"),
         name='instruments'),
 ]
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns \
+        + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if apps.is_installed('contaminer'):
     urlpatterns.append(
