@@ -19,6 +19,7 @@
 from django import template
 from django.urls import reverse
 from django.apps import apps
+from django.conf import settings
 
 register = template.Library()
 
@@ -27,16 +28,36 @@ def software_links():
     custom_apps = []
     if apps.is_installed('contaminer'):
         custom_apps.extend([
-            {'name': 'ContaMiner', 'href': reverse('ContaMiner:home')},
-            {'name': 'ContaBase', 'href': reverse('ContaMiner:contabase')},
+            {
+                'name': 'ContaMiner',
+                'href': reverse('ContaMiner:home'),
+                'alt' : "favicon ContaMiner",
+                'src' : settings.STATIC_URL + "images/contaminer.png",
+            },
+            {
+                'name': 'ContaBase',
+                'href': reverse('ContaMiner:contabase'),
+                'alt' : "favicon ContaBase",
+                'src' : settings.STATIC_URL + "images/contabase.png",
+            },
             ])
 
     if apps.is_installed('ProteinViewer'):
         custom_apps.append(
-            {'name': 'ProteinViewer', 'href': reverse('ProteinViewer:home')})
+            {
+                'name': 'ProteinViewer',
+                'href': reverse('ProteinViewer:home'),
+                'alt' : "favicon Protein Viewer",
+                'src' : settings.STATIC_URL + "images/proteinviewer.png",
+            })
 
     if apps.is_installed('NMRViewer'):
         custom_apps.append(
-            {'name': 'NMRViewer', 'href': reverse('NMRViewer:home')})
+            {
+                'name': 'NMRViewer',
+                'href': reverse('NMRViewer:home'),
+                'alt' : "favion NMR Viewer",
+                'src' : settings.STATIC_URL + "images/nmrviewer.png",
+            })
 
     return {'links': custom_apps}
