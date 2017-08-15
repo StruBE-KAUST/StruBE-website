@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}<h1>Welcome to the software corner</h1>
 {% load staticfiles %}
-<img class="img-responsive" src="{% static "images/strube-group-photo.png" %}"
-/>
+<!--img class="img-responsive" src="{#{% static "images/nmr_viewer.png" %}#}"
+/-->
 
 <h2>This website</h2>
 <p>This website is only a small part of the work done in Prof. Arold's lab.
@@ -13,7 +13,8 @@ Engineering laboratory, with some internal informations for the members.</p>
                             link</a>.</p>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-            <img class="img-responsive" src="{% static "images/FAK.png" %}" />
+            <img class="img-responsive illustration" alt="NMR viewer"
+                 src="{% static "images/nmrviewer_screenshot.png" %}" />
         </div>
     </div>
 {% block articles %}

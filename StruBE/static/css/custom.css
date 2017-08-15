@@ -90,6 +90,10 @@ nav.navbar li a:hover, nav.navbar li.open>a, nav.navbar li a.dropdown-toggle:foc
     margin: 1em -15px 1em -15px;
 }
 
+.illustration {
+    border-radius: 10px;
+}
+
 #footer {
     background-color: #003B75;
     color: white;
