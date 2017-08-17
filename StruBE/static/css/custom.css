@@ -152,14 +152,12 @@ dl h5 {
     margin-top: 1em;
 }
 
-.no-bullet{
+.no-bullet {
     list-style: none;
 }
 
-#news {
-    padding: 1em;
-    margin-left: 0;
-    margin-right: 0;
+fieldset {
+    margin-top: 1.5em;
 }
 
 #contaminants .form-group {
