@@ -143,6 +143,16 @@ dl h5 {
     font-weight: bold;
 }
 
+.success {
+    color: green;
+}
+.failure {
+    color: red;
+}
+.warning {
+    color: orange;
+}
+
 .ladda-button, .btn-primary {
     border-radius: 10px;
     background-color: #003B75;
