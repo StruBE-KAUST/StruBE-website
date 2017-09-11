@@ -17,6 +17,7 @@
 ##    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 import os
+import sys
 import ConfigParser
 import random
 import logging
@@ -79,6 +80,10 @@ else:
 dictConfig(LOGGING)
 log = logging.getLogger(__name__)
 log.debug("Log configuration loaded")
+
+# Disable logging if testing mode
+if len(sys.argv) > 1 and sys.argv[1] == "test":
+    logging.disable(logging.CRITICAL)
 
 # DATABASES from config.ini
 default_db = {}
