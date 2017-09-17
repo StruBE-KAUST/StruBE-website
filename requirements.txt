@@ -13,3 +13,4 @@ ipaddress==1.0.16
 pyasn1==0.1.9
 pytz==2016.4
 six==1.10.0
+django-cors-headers==2.1.0
