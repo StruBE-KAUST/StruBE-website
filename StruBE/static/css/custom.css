@@ -94,6 +94,17 @@ nav.navbar li a:hover, nav.navbar li.open>a, nav.navbar li a.dropdown-toggle:foc
     border-radius: 10px;
 }
 
+dt {
+    clear: both;
+}
+
+.app-img {
+    display: block;
+    float: right;
+    height: 10em;
+    margin: 0 1em;
+}
+
 #footer {
     background-color: #003B75;
     color: white;

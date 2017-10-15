@@ -1,22 +1,73 @@
 {% extends "base.html" %}
 {% block content %}<h1>Welcome to the software corner</h1>
 {% load staticfiles %}
-<!--img class="img-responsive" src="{#{% static "images/nmr_viewer.png" %}#}"
-/-->
-
-<h2>This website</h2>
-<p>This website is only a small part of the work done in Prof. Arold's lab.
-Here, you can find some services provided by the Structural Biology and
-Engineering laboratory, with some internal informations for the members.</p>
-<p>To access the public website, please visit <a
-                            href="http://strube.kaust.edu.sa">this
-                            link</a>.</p>
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <img class="img-responsive illustration" alt="NMR viewer"
-                 src="{% static "images/nmrviewer_screenshot.png" %}" />
-        </div>
+<div class="row">
+    <div class="col-sm-6">
+        <h2>This website</h2>
+        <p>This website is only a small part of the work done in Prof. Arold's
+          lab. Here, you can find some services provided by the Structural
+          Biology and Engineering laboratory, with some internal informations
+          for the members.</p>
+        <p>To access the public website, please visit
+            <a href="http://strube.kaust.edu.sa">this link</a>.</p>
     </div>
-{% block articles %}
-{% endblock %}
+    <div class="col-sm-5 col-sm-offset-1">
+        <img class="img-responsive illustration"
+             src="{% static "images/software_team.jpg" %}" />
+        <figcaption class="figure-caption">The ContaMiner team</figcaption>
+    </div>
+</div>
+
+<div class="row">
+    <p>
+        <dl>
+            <dt>ContaMiner</dt>
+            <dd>
+                <img src="{%static "contaminer/img/logo.png" %}"
+                     alt="ContaMiner logo" class="img-responsive app-img" />
+                <a href="{% url "ContaMiner:submit" %}">ContaMiner</a> is a
+                rapid automated large-scale detection of contaminant crystals.
+                Protein contaminants, from the expression host, purification
+                buffers or from the affinity tags used, may crystallise instead
+                of a protein of interest.
+                Unfortunately, this only becomes clear once the crystal
+                structure has been determined...
+                <br />
+                ContaMiner allows rapid screening of X-ray diffraction data
+                against the most likely proteins contaminants.
+            </dd>
+            <dt>LD Motif Finder</dt>
+            <dd>
+                LD motifs (leucine–aspartic acid motifs) are short helical
+                protein–protein interaction motifs that have emerged as key
+                players in connecting cell adhesion with cell motility and
+                survival. LD motifs are required for embryogenesis, wound
+                healing and the evolution of multicellularity. LD motifs also
+                play roles in disease, such as in cancer metastasis or viral
+                infection.
+                <br />
+                The <a href="http://www.cbrc.kaust.edu.sa/ldmf/">LD Motif
+                Finder</a> gives you the location of predicted LD motif in a
+                protein sequence.
+            </dd>
+            <dt>Coming soon</dt>
+            <dd>More application are being developped, and should be available
+                on this website when ready.
+            </dd>
+        </dl>
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-1">
+        <img class="img-responsive illustration" alt="NMR viewer"
+             src="{% static "images/nmrviewer_screenshot.png" %}" />
+        <figcaption class="figure-caption">The NMR VR viewer</figcaption>
+    </div>
+    <div class="col-sm-4 col-sm-offset-2">
+        <img class="img-responsive illustration" alt="NMR viewer"
+             src="{% static "images/protein_viewer_screenshot.png" %}" />
+        <figcaption class="figure-caption">The protein VR viewer</figcaption>
+    </div>
+</div>
 {% endblock %}
