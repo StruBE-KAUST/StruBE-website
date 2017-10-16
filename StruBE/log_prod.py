@@ -32,14 +32,19 @@ LOGGING = {
                 'facility': 'local6',
                 'formatter': 'sysform',
                 },
+            'mail_admins': {
+                'class': 'django.utils.log.AdminEmailHandler',
+                'level': 'ERROR',
+                'formatter': 'sysform',
+                },
             },
         'loggers': {
             '': {
-                'handlers': ['syslog6'],
+                'handlers': ['syslog6', 'mail_admins'],
                 'level': 'INFO',
                 },
             'django': {
-                'handlers': ['syslog6'],
+                'handlers': ['syslog6', 'mail_admins'],
                 'level': 'INFO',
                 },
             }
