@@ -90,6 +90,21 @@ nav.navbar li a:hover, nav.navbar li.open>a, nav.navbar li a.dropdown-toggle:foc
     margin: 1em -15px 1em -15px;
 }
 
+.illustration {
+    border-radius: 10px;
+}
+
+dt {
+    clear: both;
+}
+
+.app-img {
+    display: block;
+    float: right;
+    height: 10em;
+    margin: 0 1em;
+}
+
 #footer {
     background-color: #003B75;
     color: white;
@@ -139,6 +154,16 @@ dl h5 {
     font-weight: bold;
 }
 
+.success {
+    color: green;
+}
+.failure {
+    color: red;
+}
+.warning {
+    color: orange;
+}
+
 .ladda-button, .btn-primary {
     border-radius: 10px;
     background-color: #003B75;
@@ -148,14 +173,12 @@ dl h5 {
     margin-top: 1em;
 }
 
-.no-bullet{
+.no-bullet {
     list-style: none;
 }
 
-#news {
-    padding: 1em;
-    margin-left: 0;
-    margin-right: 0;
+fieldset {
+    margin-top: 1.5em;
 }
 
 #contaminants .form-group {

@@ -1,5 +1,9 @@
 {% for link in links %}
 <li>
-    <a href="{{ link.href }}">{{ link.name }}</a>
+    <a href="{{ link.href }}">
+        <img class="logo" alt="{{ link.alt }}"
+            src="{{ link.src }}" />
+        {{ link.name }}
+    </a>
 </li>
 {% endfor %}

@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}<h1>How to acces to the lab directory</h1>
-<p>First of all, you need a Noor account. If you do not have one yet, please request one <a target="_blank" href="http://rcweb1.kaust.edu.sa/group/rc/IT_Forms/acct_req.html">here</a>.</p>
-<p>When your noor account is created, contact IT Helpdesk to ask for the access to <code>/rcsdata/strube</code>.</p>
-<p>Once the access granted, you can read all the files in the directory, add your own, and modify some of them. Depending on your operating system, the access to the lab directory is different.
+<p>Our lab has a shared directory with more than 10TB of available space. You can use it
+as a temporary or permanent storage, for small or large files, for archiving or
+sharing. This directory is backed up. In case of mistake, your files are probably not
+lost. You can contact IT Helpdesk to try to retrieve a backed up version of
+your data.</p>
+<p>First of all, you need to contact IT Helpdesk to ask for an access to
+<code>/rcsdata/strube</code>.</p>
+<p>Once the access granted, you can read all the files in the directory, add
+your own, and modify some of them. Depending on your operating system, the
+access to the lab directory is different.</p>
 <dl>
-    <dt>Noor2</dt>
-    <dd>To access the lab directory from Noor2, simply go to /rcsdata/strube.
-    For example :<code>cd /rcsdata/strube</code></dd>
     <dt>Windows 7</dt>
     <dd>Open your file browser, and click on the top bar.</p>
     <p class="row">
@@ -26,6 +30,11 @@
     <dt>Linux / others</dt>
     <dd><p>If you use something else, I guess you know what to do with that :
         <code>smb://noor-cifs3.kaust.edu.sa/strube</code>
+    </dd>
+    <dt>SSH</dt>
+    <dd>An access is also available thorugh SSH. Simply log in
+        <code>dm.kaust.edu.sa</code> with your code credentials, and go to
+        <code>/rcsdata/strube</code>.
     </dd>
 </dl>
 {% block articles %}

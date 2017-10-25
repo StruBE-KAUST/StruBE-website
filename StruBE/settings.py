@@ -17,6 +17,7 @@
 ##    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 import os
+import sys
 import ConfigParser
 import random
 import logging
@@ -80,6 +81,10 @@ dictConfig(LOGGING)
 log = logging.getLogger(__name__)
 log.debug("Log configuration loaded")
 
+# Disable logging if testing mode
+if len(sys.argv) > 1 and sys.argv[1] == "test":
+    logging.disable(logging.CRITICAL)
+
 # DATABASES from config.ini
 default_db = {}
 engine = config.get("DATABASE", "engine")
@@ -122,12 +127,14 @@ INSTALLED_APPS = [
     'envelope',
     'myaccount',
     'crispy_forms',
+    'corsheaders',
     'StruBE',
 ] + CUSTOM_APPS
 log.debug("Applications : " + str(INSTALLED_APPS))
 
 # Load Middlewares
 MIDDLEWARE_CLASSES = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -160,6 +167,10 @@ TEMPLATES = [
 
 # URLCONF
 ROOT_URLCONF = 'StruBE.urls'
+
+# Allow CORS on /api/ urls
+CORS_URLS_REGEX = r'^.*/api/.*$'
+CORS_ORIGIN_ALLOW_ALL = True
 
 # WSGI
 WSGI_APPLICATION = 'StruBE.wsgi.application'

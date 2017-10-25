@@ -8,6 +8,7 @@
 <div class="collapse navbar-collapse" id="navbar-main">
     <ul class="nav navbar-nav">
         <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="http://strube.kaust.edu.sa" target="_blank">StruBE</a></li>
         <li>
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 Softwares
@@ -16,6 +17,14 @@
             <ul class="dropdown-menu">
                 {% load softwares_links %}
                 {% software_links %}
+                <li>
+                    <a target="_blank"
+                       href="http://www.cbrc.kaust.edu.sa/ldmf/">
+                        <img class="logo" alt="favicon LDMF"
+                            src="{% static "images/ldmf.png" %}"/>
+                        LDMF
+                    </a>
+                </li>
             </ul>
         </li>
         <li>
@@ -26,7 +35,7 @@
             <ul class="dropdown-menu">
                 <li>
                     <a target="_blank" href="https://strube.herokuapp.com">
-                        <img class="logo" alt="rotmic"
+                        <img class="logo" alt="favicon rotmic"
                             src="{% static "images/rotmic.png" %}" />
                         Rotmic
                     </a>
@@ -34,21 +43,21 @@
                 <li>
                     <a target="_blank"
                         href="https://labhamster-arold.herokuapp.com">
-                        <img class="logo" alt="labhamster"
+                        <img class="logo" alt="favicon labhamster"
                             src="{% static "images/labhamster.png" %}" />
                         Labhamster
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'labdir' %}">
-                        <img class="logo" alt="lab directory"
+                        <img class="logo" alt="favicon lab directory"
                             src="{% static "images/labdir.png" %}" />
                         Lab directory
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'instruments' %}">
-                        <img class="logo" alt="instruments"
+                        <img class="logo" alt="favicon instruments"
                             src="{% static "images/instruments.png" %}" />
                         Instruments
                     </a>
