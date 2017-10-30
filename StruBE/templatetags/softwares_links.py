@@ -42,7 +42,7 @@ def software_links():
             },
             ])
 
-    if apps.is_installed('ProteinViewer'):
+    if apps.is_installed('proteinviewer'):
         custom_apps.append(
             {
                 'name': 'ProteinViewer',
@@ -51,7 +51,7 @@ def software_links():
                 'src' : settings.STATIC_URL + "images/proteinviewer.png",
             })
 
-    if apps.is_installed('NMRViewer'):
+    if apps.is_installed('nmrviewer'):
         custom_apps.append(
             {
                 'name': 'NMRViewer',

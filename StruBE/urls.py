@@ -59,15 +59,15 @@ if apps.is_installed('contaminer'):
         url(r'^contaminer/',
             include('contaminer.urls', namespace="ContaMiner")))
 
-if apps.is_installed('ProteinViewer'):
+if apps.is_installed('proteinviewer'):
     urlpatterns.append(
         url(r'^viewer/',
-            include('ProteinViewer.urls', namespace="ProteinViewer")))
+            include('proteinviewer.urls', namespace="ProteinViewer")))
 
-if apps.is_installed('NMRViewer'):
+if apps.is_installed('nmrviewer'):
     urlpatterns.append(
         url(r'^nmrviewer/',
-            include('NMRViewer.urls', namespace="NMRViewer")))
+            include('nmrviewer.urls', namespace="NMRViewer")))
 
 handler403 = 'StruBE.views.custom403'
 handler404 = 'StruBE.views.custom404'
